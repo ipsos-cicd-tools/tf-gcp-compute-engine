@@ -16,7 +16,7 @@ content: |-
   {{- $path_slice_counter := 0 }}
   {{- range .Module.Resources }}
     {{- $module_resource_counter = add $module_resource_counter 1 }}
-    {{- if eq $module_resource_counter 1 }}
+    {{- if ge $module_resource_counter 1 }}
     {{- $module_path := .Position.Filename }}
     {{- $pathname := splitList "/" $module_path }}
     {{- range $pathname }}
@@ -41,7 +41,7 @@ content: |-
     {{ .Name }}  = {{ printf "  " }}{{ .GetValue | printf "%s" }}
     {{- end }}
     {{- end }}
-  {{- if eq $path_slice_counter 2 }}
+  {{- if ge $path_slice_counter 1 }}
   }
   {{- end }}
   ```
