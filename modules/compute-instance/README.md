@@ -26,6 +26,7 @@ module "compute-instance" {
   startup_script  =   "touch /tmp/created_by_terraform"
   subnet  =   "default"
   tags  =   []
+}
 ```
 ## Resources
 
