@@ -1,23 +1,20 @@
-## Setup Instructions (delete this section)
+# Terraform Compute Engine Modules
 
-1. Create new repo in the **ipsos-cicd-tools** Github org using this repo as the template in the drop down option. 
-    - Use the naming schema **"tf-(CLOUD-PROVIDER)-(MODULE-NAME)"** 
-        - CLOUD-PROVIDER can be `gcp`, `az`, or `aws`
-        - Be sure to keep it all in lowercase
-
-2. Branch protection is enabled for `main` so any changes will need to be made via Pull Requests 
-
-3. Delete this section of the README and use the rest as a template for setting one up
-<br>
-<br>
-
-
-# Terraform $REPO_NAME Module
-
-Brief description of module
+Collection of terraform modules related to Computer Engine VMs
 
 ## Compatibility
-Any compatability concerns go here
+```
+terraform {
+  required_version = ">=1.6.6"
+
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 5.20.0"
+    }
+  }
+}
+```
 
 ## Useage 
 More specific useage examples can be found in the ***modules*** folder under the corresponding module name
