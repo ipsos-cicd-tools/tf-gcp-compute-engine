@@ -4,11 +4,6 @@ variable "project_id" {
   description = "GCP project name"
 }
 
-variable "environment" {
-  type        = string
-  description = "Deployment Environment (dev, qa, stg, prd, poc, test)"
-}
-
 variable "os_disk_type" {
   type        = string
   description = "Type of disk for OS partition"
@@ -21,15 +16,11 @@ variable "os_disk_size" {
   default     = "10"
 }
 
-variable "gcp_region" {
-  type        = string
-  description = "GCP region, e.g. us-west1"
-  default     = "us-central1"
-}
+
 
 variable "gcp_zone" {
   type        = string
-  description = "GCP zone, e.g. us-west1"
+  description = "GCP zone, e.g. us-west1-a"
   default     = "us-central1-a"
 }
 
@@ -98,4 +89,10 @@ variable "service_account" {
     scopes = list(string) # ["cloud-platform"]  Full list: https://cloud.google.com/sdk/gcloud/reference/alpha/compute/instances/set-scopes#--scopes
   })
   default = null
+}
+
+variable "metadata" {
+  description = "A map of metadata to add to the instance"
+  type        = map(string)
+  default     = null
 }

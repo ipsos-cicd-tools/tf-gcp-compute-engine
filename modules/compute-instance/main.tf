@@ -1,5 +1,5 @@
 resource "google_compute_instance" "default" {
-  name                      = format("%s-%s", var.instance_name, var.environment)
+  name                      = format("%s", var.instance_name)
   machine_type              = var.machine_type
   zone                      = var.gcp_zone
   labels                    = var.labels
@@ -28,6 +28,8 @@ resource "google_compute_instance" "default" {
 
   metadata_startup_script = var.startup_script
 
+  metadata = var.metadata
+
   dynamic "service_account" {
     for_each = var.service_account != null ? [var.service_account] : []
     content {
@@ -46,7 +48,7 @@ resource "google_compute_instance" "default" {
 
 
 resource "google_compute_disk" "boot-disk" {
-  name   = format("%s-%s-%s", var.instance_name, var.environment, "boot-disk")
+  name   = format("%s-%s", var.instance_name, "boot-disk")
   type   = var.os_disk_type
   image  = var.image
   labels = var.labels
@@ -64,7 +66,7 @@ resource "google_compute_disk" "boot-disk" {
 resource "google_compute_disk" "additional_disks" {
   for_each = var.disk_config
   project  = var.project_id
-  name     = format("%s-%s-%s", var.instance_name, var.environment, each.key)
+  name     = format("%s-%s", var.instance_name, each.key)
   zone     = var.gcp_zone
   type     = each.value["type"]
   size     = each.value["size"]
