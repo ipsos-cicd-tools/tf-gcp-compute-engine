@@ -99,3 +99,9 @@ variable "service_account" {
   })
   default = null
 }
+
+variable "metadata" {
+  description = "A map of metadata to add to the instance"
+  type        = map(string)
+  default     = null
+}

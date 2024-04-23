@@ -28,6 +28,8 @@ resource "google_compute_instance" "default" {
 
   metadata_startup_script = var.startup_script
 
+  metadata = var.metadata
+
   dynamic "service_account" {
     for_each = var.service_account != null ? [var.service_account] : []
     content {
