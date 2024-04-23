@@ -48,7 +48,7 @@ resource "google_compute_instance" "default" {
 
 
 resource "google_compute_disk" "boot-disk" {
-  name   = format("%s-%s-%s", var.instance_name, var.environment, "boot-disk")
+  name   = format("%s-%s", var.instance_name, "boot-disk")
   type   = var.os_disk_type
   image  = var.image
   labels = var.labels
@@ -66,7 +66,7 @@ resource "google_compute_disk" "boot-disk" {
 resource "google_compute_disk" "additional_disks" {
   for_each = var.disk_config
   project  = var.project_id
-  name     = format("%s-%s-%s", var.instance_name, var.environment, each.key)
+  name     = format("%s-%s", var.instance_name, each.key)
   zone     = var.gcp_zone
   type     = each.value["type"]
   size     = each.value["size"]
