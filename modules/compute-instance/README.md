@@ -3,29 +3,29 @@
 Basic usage of this module is as follows:
 ```
 module "compute-instance" {
-source  = "git::https://github.com/ipsos-cicd-tools/tf-gcp-compute-engine//modules/compute-instance?ref=<version number>"
-
-## Required Variables ##
-environment  = 
-project_id  = 
-
-## Optional Variables ##
-disk_config  = {}
-gcp_region  = "us-central1"
-gcp_zone  = "us-central1-a"
-image  = "centos-cloud/centos-stream-8"
-instance_name  = ""
-labels  = {
+  source  = "git::https://github.com/ipsos-cicd-tools/<repo name>//modules/compute-instance?ref=<version number>"
+  
+  ## Required Variables ##
+  environment  = 
+  project_id  = 
+  
+  ## Optional Variables ##
+  disk_config  =   {}
+  gcp_region  =   "us-central1"
+  gcp_zone  =   "us-central1-a"
+  image  =   "centos-cloud/centos-stream-8"
+  instance_name  =   ""
+  labels  =   {
   "deployedby": "terraform"
 }
-machine_type  = "n1-standard-1"
-os_disk_size  = "10"
-os_disk_type  = "pd-balanced"
-resource_policy  = []
-service_account  = null
-startup_script  = "touch /tmp/created_by_terraform"
-subnet  = "default"
-tags  = []
+  machine_type  =   "n1-standard-1"
+  os_disk_size  =   "10"
+  os_disk_type  =   "pd-balanced"
+  resource_policy  =   []
+  service_account  =   null
+  startup_script  =   "touch /tmp/created_by_terraform"
+  subnet  =   "default"
+  tags  =   []
 }
 ```
 ## Resources
