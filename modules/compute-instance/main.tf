@@ -1,5 +1,5 @@
 resource "google_compute_instance" "default" {
-  name                      = format("%s-%s", var.instance_name, var.environment)
+  name                      = format("%s", var.instance_name)
   machine_type              = var.machine_type
   zone                      = var.gcp_zone
   labels                    = var.labels
