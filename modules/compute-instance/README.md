@@ -62,4 +62,5 @@ module "compute-instance" {
 | <a name="output_id"></a> [id](#output\_id) | n/a |
 | <a name="output_internal_ip"></a> [internal\_ip](#output\_internal\_ip) | n/a |
 | <a name="output_name"></a> [name](#output\_name) | n/a |
+| <a name="output_zone"></a> [zone](#output\_zone) | n/a |
 <!-- END_TF_DOCS -->
