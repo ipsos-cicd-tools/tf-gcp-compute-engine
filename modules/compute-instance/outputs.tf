@@ -22,3 +22,4 @@ output "additional_disks" {
     instance = google_compute_instance.default.name
   } }
 }
+
