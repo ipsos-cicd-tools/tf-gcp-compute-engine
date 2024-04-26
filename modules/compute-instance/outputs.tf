@@ -1,13 +1,13 @@
 output "internal_ip" {
-  value = google_compute_instance.default[*].network_interface[0].network_ip
+  value = google_compute_instance.default.network_interface[0].network_ip
 }
 
 output "id" {
-  value = google_compute_instance.default[*].instance_id
+  value = google_compute_instance.default.instance_id
 }
 
 output "name" {
-  value = google_compute_instance.default[*].name
+  value = google_compute_instance.default.name
 }
 
 output "boot_disk_name" {
@@ -21,4 +21,8 @@ output "additional_disks" {
     disk     = v.name
     instance = google_compute_instance.default.name
   } }
+}
+
+output "zone" {
+  value = google_compute_instance.default.zone
 }
