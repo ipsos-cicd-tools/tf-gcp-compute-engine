@@ -26,3 +26,7 @@ output "additional_disks" {
 output "zone" {
   value = google_compute_instance.default.zone
 }
+
+output "self_link" {
+  value = google_compute_instance.default.self_link
+}
