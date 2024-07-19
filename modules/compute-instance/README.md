@@ -18,6 +18,7 @@ module "compute-instance" {
 }
   machine_type  =   "n1-standard-1"
   metadata  =   null
+  network_ip  =   null
   os_disk_size  =   "10"
   os_disk_type  =   "pd-balanced"
   resource_policy  =   []
@@ -45,6 +46,7 @@ module "compute-instance" {
 | <a name="input_labels"></a> [labels](#input\_labels) | n/a | `map(string)` | <pre>{<br>  "deployedby": "terraform"<br>}</pre> | no |
 | <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | GCP machine type.  See: https://cloud.google.com/compute/docs/general-purpose-machines | `string` | `"n1-standard-1"` | no |
 | <a name="input_metadata"></a> [metadata](#input\_metadata) | A map of metadata to add to the instance | `map(string)` | `null` | no |
+| <a name="input_network_ip"></a> [network\_ip](#input\_network\_ip) | The reserved IP address to assign to the instance | `string` | `null` | no |
 | <a name="input_os_disk_size"></a> [os\_disk\_size](#input\_os\_disk\_size) | Size of OS disk in GB | `string` | `"10"` | no |
 | <a name="input_os_disk_type"></a> [os\_disk\_type](#input\_os\_disk\_type) | Type of disk for OS partition | `string` | `"pd-balanced"` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | GCP project name | `string` | n/a | yes |
