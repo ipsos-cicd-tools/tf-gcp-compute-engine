@@ -96,3 +96,9 @@ variable "metadata" {
   type        = map(string)
   default     = null
 }
+
+variable "network_ip" {
+  description = "The reserved IP address to assign to the instance"
+  type        = string
+  default     = null
+}
