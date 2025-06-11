@@ -71,4 +71,10 @@ resource "google_compute_disk" "additional_disks" {
   zone     = var.gcp_zone
   type     = each.value["type"]
   size     = each.value["size"]
+
+  lifecycle {
+    ignore_changes = [
+      snapshot
+    ]
+  }
 }
