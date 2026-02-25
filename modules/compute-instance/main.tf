@@ -74,7 +74,9 @@ resource "google_compute_disk" "additional_disks" {
 
   lifecycle {
     ignore_changes = [
-      snapshot
+      snapshot,
+      description,
+      image
     ]
   }
 }
