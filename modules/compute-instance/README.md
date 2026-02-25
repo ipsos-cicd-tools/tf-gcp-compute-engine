@@ -9,6 +9,7 @@ module "compute-instance" {
   project_id  = 
   
   ## Optional Variables ##
+  boot_disk_name  =   null
   disk_config  =   {}
   gcp_zone  =   "us-central1-a"
   image  =   "centos-cloud/centos-stream-8"
@@ -39,6 +40,7 @@ module "compute-instance" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_boot_disk_name"></a> [boot\_disk\_name](#input\_boot\_disk\_name) | Name of the boot disk to create. If null, a name will be generated based on the instance name | `string` | `null` | no |
 | <a name="input_disk_config"></a> [disk\_config](#input\_disk\_config) | Additional disk configurations for instance | <pre>map(object({<br>    type = string<br>    size = number<br>  }))</pre> | `{}` | no |
 | <a name="input_gcp_zone"></a> [gcp\_zone](#input\_gcp\_zone) | GCP zone, e.g. us-west1-a | `string` | `"us-central1-a"` | no |
 | <a name="input_image"></a> [image](#input\_image) | image to build instance from in the format: image-family/os. See: https://cloud.google.com/compute/docs/images#os-compute-support | `string` | `"centos-cloud/centos-stream-8"` | no |
