@@ -104,7 +104,7 @@ variable "network_ip" {
 }
 
 variable "boot_disk_name" {
-  type = string
-  default = null
+  type        = string
+  default     = null
   description = "Name of the boot disk to create. If null, a name will be generated based on the instance name"
 }
