@@ -49,7 +49,7 @@ resource "google_compute_instance" "default" {
 
 
 resource "google_compute_disk" "boot-disk" {
-  name   = format("%s-%s", var.instance_name, "boot-disk")
+  name   = var.boot_disk_name != null ? var.boot_disk_name : format("%s-%s", var.instance_name, "boot-disk")
   type   = var.os_disk_type
   image  = var.image
   labels = var.labels
